@@ -1,0 +1,17 @@
+header{
+//	position: fixed;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1em;
+	background: white ;
+
+	width: 100%;
+	[aria-label="Coffee Logo"]{
+		width: min(10rem, 20vw);
+	}
+	
+	i{
+		font-size: 2rem;
+	}
+}

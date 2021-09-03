@@ -1,0 +1,21 @@
+@use '../utils/variables' as colors;
+.menu{
+	display: grid;
+	padding: 1em;
+	margin-inline: auto;
+	max-width: 1400px;
+	&__title{
+		text-align: center;
+		margin-bottom: 2rem;
+		position: relative; 
+		&::before{
+			content: '';
+			position: absolute;
+			bottom: .2rem;
+			left: 49%;
+			right: 49%;
+			height: 0.1rem;
+			background: colors.$brown-800;
+		}
+	}
+}
