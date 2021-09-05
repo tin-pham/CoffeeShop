@@ -14,3 +14,14 @@ $font-primary: 'Josefin Sans', sans-serif;
 $light: 300;
 $normal: 400;
 $bold: 700;
+
+
+
+
+// BREAKPOINT
+$breakpoint-tablet: 769px;
+$breakpoint-desktop: 1200px;
+
+
+// TRANSFORM 
+$trans: cubic-bezier(0, 1, 0.5, 1);

@@ -1,8 +1,16 @@
 {
 	"Black Coffee": {
-		"name": "Black Coffee",
-		"price": "5.99",
-		"img": "./images/coffee-01.jpg",
-		"info": "Something you neva know, i don't know, maybe the time will answer"
+		"title": "Cà phê đen",
+		"price": "30k",
+		"image": "./images/black-coffee.webp",
+		"alt": "Black Coffee",
+		"info": "Một tách cà phê đen thơm ngào ngạt, phảng phất mùi cacao là món quà tự thưởng tuyệt vời nhất cho những ai mê đắm tinh chất nguyên bản nhất của cà phê. Một tách cà phê trầm lắng, thi vị giữa dòng đời vồn vã."
+	},
+	"Latte": {
+		"title": "Latte",
+		"price": "50k",
+		"image": "./images/latte.webp",
+		"alt": "Latte",
+		"info": "Khi chuẩn bị Latte, cà phê Espresso và sữa nóng được trộn lẫn vào nhau, bên trên vẫn là lớp foam nhưng mỏng và nhẹ hơn Cappucinno."
 	}
 }

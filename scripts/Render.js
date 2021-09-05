@@ -1,15 +1,19 @@
+import Card from './Card.js';
+
+// Select the menu 
+const menu = document.querySelector('.menu__cards');
+
 export default class Render {
-	static #getCoffees() {
-		const coffeeData = fetch('../scripts/coffees.json')
-		return coffeeData;
-	}
-	static loadMenu() {
-		const coffeesData = Render.#getCoffees();
+	static loadMenu(data) {
+		for (let coffee of Object.values(data)) {
+			const coffeeObject = new Card(coffee);
 
-		coffeesData
-			.then(response => response.json())
-			.then(coffees => {
+			const coffeeElement = coffeeObject.getElement();
 
-			})
+
+
+			menu.append(coffeeElement);
+		}
+		Card.addEventToAll();
 	}
 }
