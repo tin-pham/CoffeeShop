@@ -14,6 +14,6 @@ export default class Render {
 
 			menu.append(coffeeElement);
 		}
-		Card.addEventToAll();
+		Card.addHoverEvent();
 	}
 }
