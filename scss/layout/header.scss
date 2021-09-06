@@ -12,7 +12,24 @@ header{
 		width: min(10rem, 20vw);
 	}
 	
-	i{
+	.cart-container{
 		font-size: 2rem;
+		position: relative;
+		&::before{
+			content: attr(data-added);
+			position: absolute;
+			bottom: -1.5rem;
+			left: -1rem;
+			width: 40px;
+			height: 40px;
+			border-radius: 50%;
+			background: variables.$brown-800;	
+			color: white;
+
+
+			display: flex;
+			justify-content: center;
+			align-items:center;
+		}
 	}
 }

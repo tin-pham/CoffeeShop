@@ -1,4 +1,5 @@
 @use '../utils/variables';
+@use '../utils/mixins' as *;
 $trans: cubic-bezier(0, 1, 0.5, 1);
 .card{
 	// test
@@ -30,53 +31,141 @@ $trans: cubic-bezier(0, 1, 0.5, 1);
 		}
 
 		figcaption{
-			display: flex;
-			justify-content: space-between;
-			align-items: center;
-
+			display: flex;	
 			margin-block: 0.5rem;
+				
 		}
 
 	}
-	
+
+	.card__price {
+		margin-left: auto;
+	}
+
+	.button{
+		border: none;
+		background: none;
+		font-size: 2rem;
+		margin-left: .5rem; 	
+		opacity: 0;
+		
+	}
+	.button--minus{
+		display: none; 
+	}
 	&__info {
 		opacity:0;
 	}
 }
 
 
-.card, .card img, .card figcaption, .card__title, .card__price, .card__info,
-.card figure::after{
+.card, .card img, .card figcaption, .card__title, .card__price, .card__info, .card figure, 
+.card figure::before, .card figure::after,  .card__button{
 	transition: all $trans 0.5s; 
 }
 
 .card.hover{
 	position: relative;
-	transform: scale(1.1) translateY(-2rem);
-	background: variables.$brown-800 ;
-	color: white;
-	z-index: 2;
-	figure{
-		&::after{
-			background-color: white;
-			transform: translateY(-1rem);
-			right: .5rem;
+	@include tablet-device{
+		transform: scale(1.1) translateY(-2rem);
+		background: variables.$brown-800 ;
+		color: white;
+		z-index: 2;
+		figure{
+			&::before{
+				transform: translate(-1.25rem, -3rem); 
+			}
+			&::after{
+				background-color: white;
+				transform: translateY(-1rem);
+				right: .5rem;
+			}
+			img{
+				transform: scale(1.1) translateY(-2rem);
+			}
+			figcaption{
+				transform: translateY(-1rem);
+				
+			}
 		}
-		img{
-			transform: scale(1.1) translateY(-2rem);
+		.card__title{ 
+			font-size: 3rem; 
+		}	
+		.card__price{
+			font-size: 3rem;
 		}
-		figcaption{
-			transform: translateY(-1rem);
+		.card__info{
+			opacity: 1;
+			line-height: 1.1;
+
 		}
-	}
-	.card__title{ 
-		font-size: 3rem; 
+		.button{
+			color: inherit;
+			opacity: 1;
+		}
+		
 	}	
-	.card__price{
-		font-size: 3rem;
+}
+.card.touch{
+	@include mobile-device{
+		background: variables.$brown-800 ;
+		color: white;
+		z-index: 2;
+
+		figure{ 
+			img{
+				transform: scale(1.05) translateY(-.5rem);
+			}
+			&::before{ 
+				transform: translate(-.5rem, -1rem);
+			}
+			&::after{
+				right: 0.4rem;
+				background: white;
+			}
+		}
+		.card__info{
+			opacity: 1;
+			line-height: 1.1;
+
+		}
+		.button{
+			color: inherit;
+			opacity: 1;
+		}
+		
+	}	
+}
+
+.card.added{
+	figure{
+		position: relative;
 	}
-	.card__info{
-		opacity: 1;
+	figure::before{
+		content: 'Đã thêm'; 
+		position: absolute;
+		left: 0.2em;
+		top: 0.2em;
+		color: white;
+		padding: 1em;
+		font-size: 1.3rem;
+		background: variables.$blue-400;	
+		z-index: 3;
+		border-radius: 10px 0 0 0; 
+	}
+	.button--minus{
+		display:inline-block;
+	}
+	.button--plus{
+		display: none;
 	}
 }
 
+@keyframes rotateAround{
+	from{
+		transform: rotateZ(0);
+	}
+	to{
+		transform: rotateZ(360deg);
+	}
+}
