@@ -35,6 +35,10 @@ button {
   font-size: 1.1rem;
 }
 
+table {
+  font-size: 1.1rem;
+}
+
 header {
   display: flex;
   justify-content: space-between;
@@ -239,7 +243,7 @@ body.disable::after {
   color: white;
   padding: 1em;
   font-size: 1.3rem;
-  background: #009DF7;
+  background: #009df7;
   z-index: 3;
   border-radius: 10px 0 0 0;
 }
@@ -257,6 +261,54 @@ body.disable::after {
   to {
     transform: rotateZ(360deg);
   }
+}
+table {
+  max-width: 800px;
+  background: white;
+}
+table caption {
+  background-color: #2c1811;
+  color: white;
+  text-align: center;
+}
+table thead,
+table tbody {
+  text-align: center;
+}
+table th {
+  padding: 0.25em;
+}
+table td {
+  vertical-align: middle;
+}
+table img {
+  width: 50px;
+}
+table input {
+  width: 50%;
+  text-align: inherit;
+  font-size: inherit;
+  padding-block: 0.2em;
+}
+
+table,
+tr {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+.button {
+  cursor: pointer;
+  background: none;
+  border: none;
+  font: inherit;
+  padding: 0.5em 1em;
+}
+
+.button--orange {
+  background: #ff817a;
+  color: white;
+  border-radius: 0.5em;
 }
 
 /*# sourceMappingURL=styles.css.map */

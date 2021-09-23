@@ -1,0 +1,14 @@
+@use '../utils/variables' as var;
+.button {
+	cursor: pointer;
+	background: none;
+	border: none;
+	font: inherit;
+	padding: 0.5em 1em;
+}
+
+.button--orange {
+	background: var.$orange-400;
+	color: white;
+	border-radius: 0.5em;
+}

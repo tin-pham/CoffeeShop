@@ -1,0 +1,36 @@
+@use '../utils/variables' as var;
+table {
+	max-width: 800px;
+	background: white;
+	caption {
+		background-color: var.$brown-800;
+		color: white;
+		text-align: center;
+	}
+	thead,
+	tbody {
+		text-align: center;
+	}
+	th {
+		padding: 0.25em;
+	}
+	td {
+		vertical-align: middle;
+	}
+	img {
+		width: 50px;
+	}
+
+	input {
+		width: 50%;
+		text-align: inherit;
+		font-size: inherit;
+		padding-block: 0.2em;
+	}
+}
+
+table,
+tr {
+	border: 1px solid black;
+	border-collapse: collapse;
+}

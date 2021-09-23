@@ -7,50 +7,56 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>Coffee Shop</title>
 	<script src="https://kit.fontawesome.com/0a4a9d7429.js" crossorigin="anonymous"></script>
-	<link rel="stylesheet" href="./css/styles.css">
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="./css/styles.css" />
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;700&display=swap" rel="stylesheet" />
 	<script type="module" src="scripts/script.js" defer></script>
 </head>
 
+<body>
+	<header>
+		<object data="./images/coffee.svg" type="image/svg+xml" class="logo" aria-label="Coffee Logo"></object>
 
-<header>
-	<object data="./images/coffee.svg" type="image/svg+xml" class="logo" aria-label="Coffee Logo"></object>
+		<button class="cart-container" data-added="0">
+			<i class="fas fa-shopping-cart"></i>
+		</button>
+	</header>
 
-	<button class="cart-container" data-added=0>
-		<i class="fas fa-shopping-cart"></i>
-	</button>
-</header>
+	<main class="menu">
+		<h1 class="menu__title">Menu</h1>
 
-
-<main class="menu">
-	<h1 class="menu__title">Menu</h1>
-
-
-	<!-- Template goes here -->
-	<section class="menu__cards">
-		<!-- <div class="card"> -->
-		<!-- 	<figure> -->
-		<!-- 		<img src="./images/coffee-01.jpg" alt="black coffee"> -->
-		<!-- 		<figcaption> -->
-		<!-- 			<h2 class="card__title">cà phê đen</h2> -->
-		<!-- 			<p class="card__price">5.99$</p> -->
-		<!-- 		</figcaption> -->
-		<!-- 	</figure> -->
-		<!-- 	<p class="card__info"> -->
-		<!-- 		lorem ipsum dolor sit amet, consectetur adipiscing elit. donec sed elit dictum, rutrum sem id, gravida -->
-		<!-- 		ligula. nam maximus sagittis. -->
-		<!-- 	</p> -->
-		<!-- </div> -->
-
-	</section>
-</main>
-
-
-
-
-
+		<section class="menu__cards">
+			<!-- Template goes here -->
+		</section>
+		<table>
+			<caption>
+				Giỏ hàng
+			</caption>
+			<thead>
+				<tr>
+					<th>Món hàng</th>
+					<th></th>
+					<th>Giá tiền</th>
+					<th>Số lượng</th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						<img src="./images/americano.webp" alt="Americano" />
+					</td>
+					<td>Americano</td>
+					<td>30k</td>
+					<td><input type="number" min="1" /></td>
+					<td>
+						<button class="button button--orange">Xóa</button>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</main>
 </body>
 
 </html>

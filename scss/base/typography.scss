@@ -1,31 +1,31 @@
 @use '../utils/variables' as fonts;
-*{
-	font-family: fonts.$font-primary;	
+* {
+	font-family: fonts.$font-primary;
 }
 
-
-.menu{
-	&__title{
+.menu {
+	&__title {
 		font-size: 3rem;
 		text-transform: uppercase;
 		letter-spacing: 5px;
 	}
 }
 
-
-.card{
-	&__title{
+.card {
+	&__title {
 		font-size: 2rem;
 		letter-spacing: 1.1;
 	}
-	&__price{
+	&__price {
 		font-size: 2.5rem;
-		font-weight: fonts.$light; 
+		font-weight: fonts.$light;
 		letter-spacing: 1.5;
 	}
-	&__info{
+	&__info {
 		font-size: 1.1rem;
 	}
 }
 
-
+table {
+	font-size: 1.1rem;
+}
