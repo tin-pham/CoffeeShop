@@ -3,7 +3,7 @@
 	cursor: pointer;
 	background: none;
 	border: none;
-	font: inherit;
+	font-family: inherit;
 	padding: 0.5em 1em;
 }
 
@@ -11,4 +11,11 @@
 	background: var.$orange-400;
 	color: white;
 	border-radius: 0.5em;
+}
+
+.button--outline--brown {
+	color: var.$brown-800;
+	border: 2px solid currentColor;
+	border-radius: 0.5em;
+	padding-inline: 2em;
 }

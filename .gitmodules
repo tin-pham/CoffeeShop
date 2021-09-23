@@ -1,0 +1,3 @@
+[submodule "scripts/Library/LinkedList"]
+	path = scripts/Library/LinkedList
+	url = git@github.com:tin-pham/LinkedList.git

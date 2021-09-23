@@ -1,10 +1,9 @@
-import Button from './Button.js';
-
+import Button from "./Button.js";
 
 const body = document.body;
-export default class Card {
-
-	constructor({title, price, info, image, alt}) {
+export default class Coffee {
+	constructor({id, title, price, info, image, alt}) {
+		this.id = id;
 		this.title = title;
 		this.price = price;
 		this.info = info;
@@ -12,9 +11,10 @@ export default class Card {
 		this.alt = alt;
 	}
 
-	getElement() {
-		const card = document.createElement('div');
-		card.classList.add('card');
+	getCard() {
+		const card = document.createElement("div");
+		card.classList.add("card");
+		card.dataset.id = this.id;
 		card.innerHTML = `
 			<figure>
 				<img src="${this.image}" alt="${this.alt}">
@@ -26,38 +26,36 @@ export default class Card {
 				</figcaption>
 			</figure>
 			<p class="card__info">${this.info}</p>
-		`
+		`;
 		// Add Event to button
-		Button.toggleCart(card);
+		// I pass this (cardObject) to handle toggleCart
+		Button.toggleCart(card, this);
 		// Add Event to card (mobile support)
-		Card.addTouchEvent(card);
+		Coffee.addTouchEvent(card);
 		return card;
 	}
 
 	static addTouchEvent(card) {
-		card.addEventListener('click', e => {
-			const cards = document.querySelectorAll('.card');
+		card.addEventListener("click", (e) => {
+			const cards = document.querySelectorAll(".card");
 			// Clear all first
 			for (let card of cards) {
 				if (e.currentTarget == card) continue;
-				card.classList.remove('touch');
+				card.classList.remove("touch");
 			}
-			e.currentTarget.classList.toggle('touch');
-
-		})
+			e.currentTarget.classList.toggle("touch");
+		});
 	}
 	static addHoverEvent() {
-		let cards = document.getElementsByClassName('card');
+		let cards = document.getElementsByClassName("card");
 		cards = Array.from(cards);
-		cards.forEach(card => {
-			card.addEventListener('mouseenter', e => {
-				e.currentTarget.classList.add('hover');
+		cards.forEach((card) => {
+			card.addEventListener("mouseenter", (e) => {
+				e.currentTarget.classList.add("hover");
 			});
-			card.addEventListener('mouseleave', e => {
-				e.currentTarget.classList.remove('hover');
+			card.addEventListener("mouseleave", (e) => {
+				e.currentTarget.classList.remove("hover");
 			});
-		})
-
+		});
 	}
-
 }

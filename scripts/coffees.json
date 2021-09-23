@@ -1,5 +1,6 @@
 {
 	"Black Coffee": {
+		"id": 1,
 		"title": "Cà phê đen",
 		"price": "30k",
 		"image": "./images/black-coffee.webp",
@@ -7,6 +8,7 @@
 		"info": "Một tách cà phê đen thơm ngào ngạt, phảng phất mùi cacao là món quà tự thưởng tuyệt vời nhất cho những ai mê đắm tinh chất nguyên bản nhất của cà phê. Một tách cà phê trầm lắng, thi vị giữa dòng đời vồn vã."
 	},
 	"Latte": {
+		"id": 2,
 		"title": "Latte",
 		"price": "50k",
 		"image": "./images/latte.webp",
@@ -14,6 +16,7 @@
 		"info": "Có nguồn gốc từ đất nước Ý xa xôi nhưng ngày nay, Latte đã trở thành loại café được ưa chuộng khắp thế giới, kể cả Việt Nam vì hương vị thơm ngon tuyệt hảo và cách pha chế mang khuynh hướng hiện đại."
 	},
 	"Cappuccino": {
+		"id": 3,
 		"title": "Cappuccino",
 		"price": "50k",
 		"image": "./images/cappuccino.webp",
@@ -21,6 +24,7 @@
 		"info": "Cappuccino được gọi vui là thức uống 'một-phần-ba' - 1/3 Espresso, 1/3 Sữa nóng, 1/3 Foam."
 	},
 	"Americano": {
+		"id": 4,
 		"title": "Americano",
 		"price": "40k",
 		"image": "./images/americano.webp",

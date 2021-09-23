@@ -6,6 +6,7 @@ table {
 		background-color: var.$brown-800;
 		color: white;
 		text-align: center;
+		padding: 0.25em;
 	}
 	thead,
 	tbody {
@@ -27,10 +28,20 @@ table {
 		font-size: inherit;
 		padding-block: 0.2em;
 	}
+
+	tfoot {
+		text-align: right;
+	}
+
+	tfoot td {
+		padding: 0.5em;
+	}
+
 }
 
 table,
-tr {
+thead tr,
+tbody tr {
 	border: 1px solid black;
 	border-collapse: collapse;
 }
