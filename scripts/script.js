@@ -7,3 +7,5 @@ document.addEventListener("DOMContentLoaded", () => {
 			Render.loadMenu(data);
 		});
 });
+
+

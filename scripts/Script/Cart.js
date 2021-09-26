@@ -38,4 +38,8 @@ export default class Cart {
 		const tbody = document.querySelector("tbody");
 		tbody.append(trElement);
 	}
+
+	static remove(coffeeRow) {
+		coffeeRow.remove();
+	}
 }

@@ -73,8 +73,6 @@ export default class Button {
 	static #removeItem(removeButton, item) {
 		removeButton.addEventListener("click", (e) => {
 			Store.remove(item.id);
-			// Cart.remove(item);
-			console.log(Store.itemsAdded);
 		});
 	}
 }
