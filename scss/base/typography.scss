@@ -27,7 +27,10 @@
 }
 
 table {
-	font-size: min(5vw, 1.3rem);
+	font-size: min(4vw, 1.3rem);
+	caption {
+		font-size: 1.3rem;
+	}
 	tfoot td {
 		font-size: 1.5rem;
 		font-style: italic;

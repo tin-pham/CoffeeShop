@@ -1,6 +1,10 @@
 import Store from "./Store.js";
 import Cart from "./Cart.js";
 const cartButton = document.querySelector(".cart-container");
+const closeButton = document.querySelector(".button--close");
+
+cartButton.addEventListener("click", Cart.show);
+closeButton.addEventListener("click", Cart.hide);
 
 let amountAdded = cartButton.dataset.added;
 
@@ -25,18 +29,37 @@ export default class Button {
 		const button = element.querySelector(".button");
 
 		button.addEventListener("click", (e) => {
+			// Decrease the amount
+			Button.#decreaseAmount(1);
+			// Deal with the card
+			const menu = document.querySelector(".menu__cards");
+			const relateCard = menu.querySelector(
+				`[data-id="${element.dataset.id}"]`
+			);
+			Button.#removeLabel(relateCard);
+
+			// Remove label from the data
+			Store.remove(element.dataset.id);
 			// Remove from the table
 			element.remove();
-			// Remove label from the menu
+
+			if (Store.itemsAdded.length == 0) Cart.hide();
 		});
 	}
 	static #toggleLabel(card, addButton, removeButton) {
 		addButton.addEventListener("click", (e) => {
-			card.classList.add("added");
+			Button.#addLabel(card);
 		});
+
 		removeButton.addEventListener("click", (e) => {
-			card.classList.remove("added");
+			Button.#removeLabel(card);
 		});
+	}
+	static #addLabel(card) {
+		card.classList.add("added");
+	}
+	static #removeLabel(card) {
+		card.classList.remove("added");
 	}
 
 	static #toggleAmount(addButton, removeButton) {
@@ -66,13 +89,14 @@ export default class Button {
 	static #addItem(addButton, item) {
 		addButton.addEventListener("click", (e) => {
 			Store.add(item.id);
-			Cart.add(item);
+			Cart.load();
 		});
 	}
 
 	static #removeItem(removeButton, item) {
 		removeButton.addEventListener("click", (e) => {
 			Store.remove(item.id);
+			Cart.load();
 		});
 	}
 }

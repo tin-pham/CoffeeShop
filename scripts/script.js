@@ -1,4 +1,5 @@
 import Render from "./Script/Render.js";
+import Cart from "./Script/Cart.js";
 document.addEventListener("DOMContentLoaded", () => {
 	// Load Menu
 	fetch("../scripts/coffees.json")
@@ -7,5 +8,3 @@ document.addEventListener("DOMContentLoaded", () => {
 			Render.loadMenu(data);
 		});
 });
-
-

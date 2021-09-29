@@ -36,7 +36,10 @@ button {
 }
 
 table {
-  font-size: min(5vw, 1.3rem);
+  font-size: min(4vw, 1.3rem);
+}
+table caption {
+  font-size: 1.3rem;
 }
 table tfoot td {
   font-size: 1.5rem;
@@ -281,6 +284,12 @@ body.disable::after {
 table {
   max-width: 800px;
   background: white;
+  position: fixed;
+  top: 0;
+  right: 0;
+  visibility: hidden;
+  margin: 1em;
+  z-index: 1;
 }
 table caption {
   background-color: #2c1811;
@@ -314,6 +323,10 @@ table tfoot td {
   padding: 0.5em;
 }
 
+table.show {
+  animation: slide-left 1s 0.1s cubic-bezier(0, 1, 0.5, 1) forwards;
+}
+
 table,
 thead tr,
 tbody tr {
@@ -321,6 +334,16 @@ tbody tr {
   border-collapse: collapse;
 }
 
+@keyframes slide-left {
+  from {
+    transform: translateX(100%);
+    visibility: hidden;
+  }
+  to {
+    transform: translateX(0);
+    visibility: visible;
+  }
+}
 .button {
   cursor: pointer;
   background: none;
@@ -340,6 +363,14 @@ tbody tr {
   border: 2px solid currentColor;
   border-radius: 0.5em;
   padding-inline: 2em;
+}
+
+.button--close {
+  color: white;
+  font-size: 1.5rem;
+  position: absolute;
+  right: 0.2rem;
+  top: -0.5rem;
 }
 
 /*# sourceMappingURL=styles.css.map */

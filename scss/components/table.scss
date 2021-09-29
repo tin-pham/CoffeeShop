@@ -2,6 +2,12 @@
 table {
 	max-width: 800px;
 	background: white;
+	position: fixed;
+	top: 0;
+	right: 0;
+	visibility: hidden;
+	margin: 1em;
+	z-index: 1;
 	caption {
 		background-color: var.$brown-800;
 		color: white;
@@ -32,11 +38,13 @@ table {
 	tfoot {
 		text-align: right;
 	}
-
 	tfoot td {
 		padding: 0.5em;
 	}
+}
 
+table.show {
+	animation: slide-left 1s 0.1s cubic-bezier(0, 1, 0.5, 1) forwards;
 }
 
 table,
@@ -44,4 +52,15 @@ thead tr,
 tbody tr {
 	border: 1px solid black;
 	border-collapse: collapse;
+}
+
+@keyframes slide-left {
+	from {
+		transform: translateX(100%);
+		visibility: hidden;
+	}
+	to {
+		transform: translateX(0);
+		visibility: visible;
+	}
 }
