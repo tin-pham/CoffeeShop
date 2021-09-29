@@ -43,7 +43,7 @@ class CoffeeRow {
 class Money {
 	static spending = 0;
 	static ship = 2000;
-	static discount = 2000;
+	static discount = 1000;
 	static total = 0;
 
 	static setSpending(item, amount, tail) {
