@@ -1,10 +1,16 @@
 import Store from "./Store.js";
 import Cart from "./Cart.js";
+
+import {
+	messengerButton,
+	closeButton,
+} from "./components/buttons/messengerButton.js";
+
 const cartButton = document.querySelector(".cart-container");
-const closeButton = document.querySelector(".button--close");
+const closeButtonTable = document.querySelector(".button--close");
 
 cartButton.addEventListener("click", Cart.show);
-closeButton.addEventListener("click", Cart.hide);
+closeButtonTable.addEventListener("click", Cart.hide);
 
 let amountAdded = cartButton.dataset.added;
 
