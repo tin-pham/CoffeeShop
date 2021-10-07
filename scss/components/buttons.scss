@@ -36,6 +36,7 @@
 	border-radius: 50%;
 	padding: 0.2em;
 	position: absolute;
+	background-color: white;
 	@include center;
 
 	transition: all 0.25s $bounce;
