@@ -1,0 +1,25 @@
+.flex-row {
+	display: flex;
+	justify-content: center;
+	gap: 0.5em;
+}
+.flex-bottom {
+	align-self: flex-end;
+}
+.flex-shrink {
+	flex-shrink: 1;
+}
+
+.flex-2 {
+	flex: 2;
+}
+
+.show {
+	transform: scale(1);
+	visibility: visible;
+}
+
+.hide {
+	transform: scale(0);
+	visibility: hidden;
+}

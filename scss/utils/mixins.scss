@@ -1,20 +1,23 @@
 @use './variables';
-@mixin flex($direction: row, $justify, $align){
+@mixin flex($direction: row, $justify, $align) {
 	display: flex;
 	flex-direction: $direction;
 	justify-content: $justify;
 	align-items: $align;
 }
 
-@mixin tablet-device{
-	@media screen and (min-width: variables.$breakpoint-tablet){
+@mixin center {
+	@include flex(row, center, center);
+}
+
+@mixin tablet-device {
+	@media screen and (min-width: variables.$breakpoint-tablet) {
 		@content;
 	}
 }
 
-@mixin mobile-device{
-	@media screen and (max-width: variables.$breakpoint-tablet - 1){
+@mixin mobile-device {
+	@media screen and (max-width: variables.$breakpoint-tablet - 1) {
 		@content;
 	}
 }
-

@@ -1,4 +1,6 @@
-@use '../utils/variables' as var;
+@use '../utils/variables' as *;
+@use '../utils/mixins' as *;
+@use '../base/typography' as *;
 .button {
 	cursor: pointer;
 	background: none;
@@ -8,13 +10,13 @@
 }
 
 .button--orange {
-	background: var.$orange-400;
+	background: $orange-400;
 	color: white;
 	border-radius: 0.5em;
 }
 
 .button--outline--brown {
-	color: var.$brown-800;
+	color: $brown-800;
 	border: 2px solid currentColor;
 	border-radius: 0.5em;
 	padding-inline: 2em;
@@ -26,4 +28,15 @@
 	position: absolute;
 	right: 0.2rem;
 	top: -0.5rem;
+	padding: 0;
+}
+
+.button--messenger {
+	border: 2px solid $brown-800;
+	border-radius: 50%;
+	padding: 0.2em;
+	position: absolute;
+	@include center;
+
+	transition: all 0.25s $bounce;
 }
