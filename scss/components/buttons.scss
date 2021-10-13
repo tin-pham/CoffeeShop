@@ -45,3 +45,9 @@
 .button--send {
 	padding: 0;
 }
+
+.button--nav {
+	@include tablet-device {
+		display: none;
+	}
+}

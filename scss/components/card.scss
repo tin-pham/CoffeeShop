@@ -4,7 +4,6 @@ $trans: cubic-bezier(0, 1, 0.5, 1);
 .card {
 	// test
 	isolation: isolate;
-	z-index: 1;
 	max-width: 500px;
 	color: variables.$brown-800;
 	padding: 0.5em;
@@ -69,8 +68,8 @@ $trans: cubic-bezier(0, 1, 0.5, 1);
 
 .card.hover {
 	position: relative;
-	@include tablet-device {
-		transform: scale(1.1) translateY(-2rem);
+	@include desktop-device {
+		transform: scale(1.1);
 		background: variables.$brown-800;
 		color: white;
 		z-index: 2;

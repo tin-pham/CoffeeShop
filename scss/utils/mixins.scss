@@ -1,4 +1,4 @@
-@use './variables';
+@use './variables' as *;
 @mixin flex($direction: row, $justify, $align) {
 	display: flex;
 	flex-direction: $direction;
@@ -9,15 +9,20 @@
 @mixin center {
 	@include flex(row, center, center);
 }
+@mixin desktop-device {
+	@media screen and (min-width: $breakpoint-desktop) {
+		@content;
+	}
+}
 
 @mixin tablet-device {
-	@media screen and (min-width: variables.$breakpoint-tablet) {
+	@media screen and (min-width: $breakpoint-tablet) {
 		@content;
 	}
 }
 
 @mixin mobile-device {
-	@media screen and (max-width: variables.$breakpoint-tablet - 1) {
+	@media screen and (max-width: $breakpoint-desktop - 1) {
 		@content;
 	}
 }

@@ -1,21 +1,38 @@
-@use '../utils/variables';
-header{
-//	position: fixed;
+@use '../utils/variables' as *;
+@use '../utils/mixins' as *;
+$background: $brown-100;
+.header {
+	//	position: fixed;
+	position: fixed;
+	top: 0;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	padding: 1em;
-	background: variables.$brown-100 ;
+	background: $background;
 
 	width: 100%;
-	[aria-label="Coffee Logo"]{
-		width: min(10rem, 20vw);
+
+	transition: all 0.2s ease-out;
+
+	z-index: 1;
+	.header__nav {
+		position: relative;
 	}
-	
-	.cart-container{
+
+	[aria-label='Coffee Logo'] {
+		width: min(5rem, 10vw);
+		display: none;
+		transform: scale(1.6);
+		@include tablet-device {
+			display: inline-block;
+		}
+	}
+
+	.cart-container {
 		font-size: 2rem;
 		position: relative;
-		&::before{
+		&::before {
 			content: attr(data-added);
 			position: absolute;
 			bottom: -1.5rem;
@@ -23,13 +40,31 @@ header{
 			width: 40px;
 			height: 40px;
 			border-radius: 50%;
-			background: variables.$brown-800;	
+			background: $brown-800;
 			color: white;
-
 
 			display: flex;
 			justify-content: center;
-			align-items:center;
+			align-items: center;
 		}
+	}
+}
+
+.header.dark {
+	$background: $brown-900;
+	$text: white;
+	background-color: $background;
+	.cart-container {
+		color: $text;
+		&::before {
+			background-color: white;
+			color: $brown-900;
+		}
+	}
+	.logo {
+		filter: invert(100%);
+	}
+	.button--nav {
+		color: $text;
 	}
 }

@@ -1,0 +1,55 @@
+@use '../utils/variables' as *;
+@use '../utils/mixins' as *;
+$background: black;
+$text: white;
+.navigations {
+	list-style: none;
+	position: fixed;
+	background-color: $background;
+	padding: 1em;
+	z-index: 2;
+	width: 100%;
+
+	left: 0;
+
+	text-align: center;
+	#{&} &__login {
+		$background: invert($background);
+		$text: invert($text);
+		background-color: $background;
+		color: $text;
+		&:active {
+			background-color: invert($background);
+			color: invert($text);
+		}
+	}
+	a {
+		display: block;
+		text-decoration: none;
+		font-size: 2rem;
+		background-color: $background;
+		color: $text;
+
+		padding: 0.5em;
+
+		@include desktop-device {
+			&:hover {
+				background-color: invert($background);
+				color: invert($text);
+			}
+		}
+		&:active {
+			background-color: invert($background);
+			color: invert($text);
+		}
+	}
+}
+
+.nav-hide .navigations {
+	top: 0;
+	transform: translateY(-100%);
+}
+
+.nav-show .navigations {
+	transform: translateY(0);
+}

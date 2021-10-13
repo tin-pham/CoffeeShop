@@ -17,7 +17,7 @@ class CoffeeRow {
 					</td>
 					<td>${this.title}</td>
 					<td>${this.price}</td>
-					<td><input type="number" min="1" value="1"/></td>
+					<td><input type="number" min="1"  value="1"/></td>
 					<td>
 						<button class="button button--orange">Xóa</button>
 					</td>

@@ -17,7 +17,7 @@ export default class Coffee {
 		card.dataset.id = this.id;
 		card.innerHTML = `
 			<figure>
-				<img src="${this.image}" alt="${this.alt}">
+				<img src="${this.image}" alt="${this.alt}" draggable="false">
 				<figcaption>
 					<h2 class="card__title">${this.title}</h2>
 					<button class="button button--plus" ><i class="far fa-plus-square"></i></button>				
