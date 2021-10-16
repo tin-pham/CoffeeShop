@@ -181,7 +181,6 @@ table tfoot td span {
 }
 
 body {
-  min-height: 100vh;
   background: #f7f8ed;
 }
 
@@ -192,8 +191,47 @@ body.disable::after {
   content: "";
   position: absolute;
   inset: 0;
+  top: -10rem;
   background: rgba(0, 0, 0, 0.4);
+}
+
+table {
+  z-index: 2;
+}
+
+.header {
   z-index: 1;
+}
+
+@media screen and (min-width: 1200px) {
+  .card.hover {
+    z-index: 0;
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  .card.touch {
+    z-index: 0;
+  }
+}
+
+.card.added figure::before {
+  z-index: 1;
+}
+
+.fixed-bottom-right {
+  z-index: 1;
+}
+
+body.disable {
+  overflow: hidden;
+}
+body.disable::after {
+  z-index: 1;
+}
+
+.navigation {
+  z-index: 0;
 }
 
 .card {
@@ -265,7 +303,6 @@ body.disable::after {
     transform: scale(1.1);
     background: #2c1811;
     color: white;
-    z-index: 2;
   }
   .card.hover figure::before {
     transform: translate(-1.25rem, -3rem);
@@ -301,7 +338,6 @@ body.disable::after {
   .card.touch {
     background: #2c1811;
     color: white;
-    z-index: 2;
   }
   .card.touch figure img {
     transform: scale(1.05) translateY(-0.5rem);
@@ -335,7 +371,6 @@ body.disable::after {
   padding: 1em;
   font-size: 1.3rem;
   background: #009df7;
-  z-index: 3;
   border-radius: 10px 0 0 0;
 }
 .card.added .button--minus {
@@ -532,7 +567,6 @@ tbody tr {
   position: fixed;
   bottom: 1em;
   right: 1em;
-  z-index: 2;
   pointer-events: none;
 }
 .fixed-bottom-right * {
@@ -545,7 +579,7 @@ tbody tr {
   bottom: 3em;
 }
 
-.navigations {
+.navigation {
   list-style: none;
   position: fixed;
   background-color: black;
@@ -554,16 +588,22 @@ tbody tr {
   width: 100%;
   left: 0;
   text-align: center;
+  transition: all 0.3s ease-out;
 }
-.navigations .navigations__login {
+@media screen and (min-width: 1200px) {
+  .navigation {
+    display: none;
+  }
+}
+.navigation .navigation__login {
   background-color: white;
   color: black;
 }
-.navigations .navigations__login:active {
+.navigation .navigation__login:active {
   background-color: black;
   color: white;
 }
-.navigations a {
+.navigation a {
   display: block;
   text-decoration: none;
   font-size: 2rem;
@@ -572,23 +612,23 @@ tbody tr {
   padding: 0.5em;
 }
 @media screen and (min-width: 1200px) {
-  .navigations a:hover {
+  .navigation a:hover {
     background-color: white;
     color: black;
   }
 }
-.navigations a:active {
+.navigation a:active {
   background-color: white;
   color: black;
 }
 
-.nav-hide .navigations {
+.nav-hide .navigation {
   top: 0;
   transform: translateY(-100%);
 }
 
-.nav-show .navigations {
-  transform: translateY(0);
+.nav-show .navigation {
+  transform: translateY(0.8em);
 }
 
 .flex-row {

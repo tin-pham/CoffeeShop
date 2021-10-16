@@ -1,0 +1,41 @@
+@use '../utils/mixins.scss' as *;
+table {
+	z-index: 2;
+}
+
+.header {
+	z-index: 1;
+}
+
+.card.hover {
+	@include desktop-device {
+		z-index: 0;
+	}
+}
+
+.card.touch {
+	@include mobile-device {
+		z-index: 0;
+	}
+}
+
+.card.added {
+	figure::before {
+		z-index: 1;
+	}
+}
+
+.fixed-bottom-right {
+	z-index: 1;
+}
+
+body.disable {
+	overflow: hidden;
+	&::after {
+		z-index: 1;
+	}
+}
+
+.navigation {
+	z-index: 0;
+}

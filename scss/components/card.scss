@@ -72,7 +72,6 @@ $trans: cubic-bezier(0, 1, 0.5, 1);
 		transform: scale(1.1);
 		background: variables.$brown-800;
 		color: white;
-		z-index: 2;
 		figure {
 			&::before {
 				transform: translate(-1.25rem, -3rem);
@@ -109,7 +108,6 @@ $trans: cubic-bezier(0, 1, 0.5, 1);
 	@include mobile-device {
 		background: variables.$brown-800;
 		color: white;
-		z-index: 2;
 
 		figure {
 			img {
@@ -147,7 +145,6 @@ $trans: cubic-bezier(0, 1, 0.5, 1);
 		padding: 1em;
 		font-size: 1.3rem;
 		background: variables.$blue-400;
-		z-index: 3;
 		border-radius: 10px 0 0 0;
 	}
 	.button--minus {

@@ -2,7 +2,7 @@
 @use '../utils/mixins' as *;
 $background: black;
 $text: white;
-.navigations {
+.navigation {
 	list-style: none;
 	position: fixed;
 	background-color: $background;
@@ -13,6 +13,12 @@ $text: white;
 	left: 0;
 
 	text-align: center;
+	transition: all 0.3s ease-out;
+
+	@include desktop-device {
+		display: none;
+	}
+
 	#{&} &__login {
 		$background: invert($background);
 		$text: invert($text);
@@ -45,11 +51,11 @@ $text: white;
 	}
 }
 
-.nav-hide .navigations {
+.nav-hide .navigation {
 	top: 0;
 	transform: translateY(-100%);
 }
 
-.nav-show .navigations {
-	transform: translateY(0);
+.nav-show .navigation {
+	transform: translateY(0.8em);
 }
